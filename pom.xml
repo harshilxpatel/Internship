@@ -8,8 +8,8 @@
 		<version>3.5.13</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>hp</groupId>
-	<artifactId>Internship</artifactId>
+	<groupId>com.codexjava</groupId>
+	<artifactId>lms</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name/>
 	<description/>

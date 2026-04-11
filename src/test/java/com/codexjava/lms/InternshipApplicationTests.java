@@ -1,4 +1,4 @@
-package hp.Intern;
+package com.codexjava.lms;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

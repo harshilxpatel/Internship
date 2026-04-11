@@ -1,4 +1,4 @@
-package hp.Intern;
+package com.codexjava.lms;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
