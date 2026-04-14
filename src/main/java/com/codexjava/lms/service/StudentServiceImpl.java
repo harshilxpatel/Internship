@@ -5,6 +5,8 @@ import com.codexjava.lms.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class StudentServiceImpl implements StudentService {
@@ -19,6 +21,11 @@ public class StudentServiceImpl implements StudentService {
                 });
 
         return studentRepository.save(student);
+    }
+
+    @Override
+    public List<Student> findAll() {
+        return studentRepository.findAll();
     }
 
     @Override
