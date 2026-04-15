@@ -79,4 +79,24 @@ class StudentServiceImplTest {
             studentService.findById(1L);
         });
     }
+
+    @Test
+    void testUpdateStudent_success() {
+        when(studentRepository.findById(1L)).thenReturn(Optional.of(student));
+        when(studentRepository.save(any(Student.class))).thenReturn(student);
+
+        Student updated = studentService.update(1L, student);
+
+        assertNotNull(updated);
+        verify(studentRepository, times(1)).save(any(Student.class));
+    }
+
+    @Test
+    void testDeleteStudent_success() {
+        when(studentRepository.findById(1L)).thenReturn(Optional.of(student));
+
+        studentService.delete(1L);
+
+        verify(studentRepository, times(1)).save(student);
+    }
 }

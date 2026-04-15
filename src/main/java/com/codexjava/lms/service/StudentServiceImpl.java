@@ -25,12 +25,34 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public List<Student> findAll() {
-        return studentRepository.findAll();
+        return studentRepository.findByDeletedFalse(); // ✅ UPDATED
     }
 
     @Override
     public Student findById(Long id) {
         return studentRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Student not found"));
+    }
+
+    // ✅ UPDATE STUDENT
+    @Override
+    public Student update(Long id, Student student) {
+        Student existing = studentRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Student not found"));
+
+        existing.setName(student.getName());
+        existing.setEmail(student.getEmail());
+
+        return studentRepository.save(existing);
+    }
+
+    // ✅ SOFT DELETE
+    @Override
+    public void delete(Long id) {
+        Student student = studentRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Student not found"));
+
+        student.setDeleted(true);
+        studentRepository.save(student);
     }
 }

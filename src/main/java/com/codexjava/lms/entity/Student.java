@@ -6,7 +6,8 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 @Entity
-@Table(name = "students", indexes = {@Index(name = "idx_name",columnList = "email",unique = true)})
+@Table(name = "students",
+        indexes = {@Index(name = "idx_name", columnList = "email", unique = true)})
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -19,11 +20,14 @@ public class Student {
     private Long id;
 
     @NotBlank(message = "Name is required")
-    @Column(nullable = false,length = 100)
+    @Column(nullable = false, length = 100)
     private String name;
 
     @Email(message = "Invalid email format")
     @NotBlank(message = "Email is required")
     @Column(unique = true)
     private String email;
+
+    @Column(name = "is_deleted")
+    private boolean deleted = false;
 }
