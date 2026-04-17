@@ -1,7 +1,7 @@
-package com.codexjava.lms.service;
+package com.codejava.lms.service;
 
-import com.codexjava.lms.entity.Student;
-import com.codexjava.lms.repository.StudentRepository;
+import com.codejava.lms.entity.Student;
+import com.codejava.lms.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

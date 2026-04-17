@@ -32,3 +32,25 @@ API Endpoints (Student)
 | GET    | /api/v1/students/{id} 
 | PUT    | /api/v1/students/{id} 
 | DELETE | /api/v1/students/{id} 
+
+Day 6
+
+Implemented full Course module following layered architecture (Controller → Service → Repository) similar to Student module.
+
+* Course Entity created
+* CourseRepository implemented
+* CourseService & CourseServiceImpl created
+* Business logic added (duplicate course code check)
+* Full Course CRUD APIs implemented (POST, GET, PUT, DELETE)
+* Soft delete implemented for Course
+* Only non-deleted courses fetched
+
+API Endpoints (Course)
+
+| Method | Endpoint             |
+| ------ | -------------------- |
+| POST   | /api/v1/courses      |
+| GET    | /api/v1/courses      |
+| GET    | /api/v1/courses/{id} |
+| PUT    | /api/v1/courses/{id} |
+| DELETE | /api/v1/courses/{id} |

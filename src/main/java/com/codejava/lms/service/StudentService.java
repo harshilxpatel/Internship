@@ -1,6 +1,6 @@
-package com.codexjava.lms.service;
+package com.codejava.lms.service;
 
-import com.codexjava.lms.entity.Student;
+import com.codejava.lms.entity.Student;
 
 import java.util.List;
 

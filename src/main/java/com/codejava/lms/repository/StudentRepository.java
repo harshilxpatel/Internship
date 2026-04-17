@@ -1,6 +1,6 @@
-package com.codexjava.lms.repository;
+package com.codejava.lms.repository;
 
-import com.codexjava.lms.entity.Student;
+import com.codejava.lms.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

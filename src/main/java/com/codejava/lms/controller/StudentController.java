@@ -1,7 +1,7 @@
-package com.codexjava.lms.controller;
+package com.codejava.lms.controller;
 
-import com.codexjava.lms.entity.Student;
-import com.codexjava.lms.service.StudentService;
+import com.codejava.lms.entity.Student;
+import com.codejava.lms.service.StudentService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

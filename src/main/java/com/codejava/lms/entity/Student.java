@@ -1,4 +1,4 @@
-package com.codexjava.lms.entity;
+package com.codejava.lms.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
