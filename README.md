@@ -257,6 +257,30 @@ One Course → Many Enrollments
 ✔ Standardized responses
 ✔ Proper documentation
 
+## 🚀 Day 20 – Production Readiness & Deployment
+
+Improvements Done
+- Prepared project for production deployment
+- Verified Docker PostgreSQL setup
+- Cleaned Git commit history using interactive rebase
+- Improved README documentation for better understanding
+
+🌐 How to Deploy (Basic)
+1. Build project:
+   mvn clean package
+
+2. Run application:
+   java -jar target/lms.jar
+
+3. Run database using Docker:
+   docker-compose up -d
+
+📌 Future Improvements
+- Add JWT Authentication
+- Add Role-Based Authorization
+- Deploy on Cloud (AWS / Render)
+- CI/CD using GitHub Actions
+
 👨‍💻 Developed By
 
 Harshil Patel
