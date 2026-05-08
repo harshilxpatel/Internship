@@ -29,5 +29,7 @@ public class Course {
     @Column(nullable = false)
     private Integer credits;
 
-    private boolean deleted = false;
+    @Builder.Default
+    @Column(nullable = false)
+    private Boolean deleted = false;
 }

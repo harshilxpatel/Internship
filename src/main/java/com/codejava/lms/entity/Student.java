@@ -28,6 +28,6 @@ public class Student {
     @Column(unique = true)
     private String email;
 
-    @Column(name = "is_deleted")
-    private boolean deleted = false;
+    @Column(name = "is_deleted", nullable = false)
+    private Boolean deleted = false;
 }

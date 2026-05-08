@@ -18,7 +18,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Student create(Student student) {
 
-        if(studentRepository.findByEmail(student.getEmail()).isPresent()){
+        if (studentRepository.findByEmail(student.getEmail()).isPresent()) {
             throw new DuplicateResourceException("Email already exists");
         }
 
@@ -27,24 +27,32 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public List<Student> findAll() {
+
         return studentRepository.findByDeletedFalse();
     }
 
     @Override
     public Student findById(Long id) {
+
         return studentRepository.findById(id)
-                .filter(s -> !s.isDeleted())
-                .orElseThrow(() -> new ResourceNotFoundException("Student not found with id: " + id));
+                .filter(s -> Boolean.FALSE.equals(s.getDeleted()))
+                .orElseThrow(() ->
+                        new ResourceNotFoundException(
+                                "Student not found with id: " + id
+                        ));
     }
 
     @Override
     public Student update(Long id, Student student) {
 
         Student existing = studentRepository.findById(id)
-                .filter(s -> !s.isDeleted())
-                .orElseThrow(() -> new ResourceNotFoundException("Student not found with id: " + id));
+                .filter(s -> Boolean.FALSE.equals(s.getDeleted()))
+                .orElseThrow(() ->
+                        new ResourceNotFoundException(
+                                "Student not found with id: " + id
+                        ));
 
-        // duplicate email check
+        // Duplicate email check
         studentRepository.findByEmail(student.getEmail())
                 .filter(s -> !s.getId().equals(id))
                 .ifPresent(s -> {
@@ -61,10 +69,14 @@ public class StudentServiceImpl implements StudentService {
     public void delete(Long id) {
 
         Student student = studentRepository.findById(id)
-                .filter(s -> !s.isDeleted())
-                .orElseThrow(() -> new ResourceNotFoundException("Student not found with id: " + id));
+                .filter(s -> Boolean.FALSE.equals(s.getDeleted()))
+                .orElseThrow(() ->
+                        new ResourceNotFoundException(
+                                "Student not found with id: " + id
+                        ));
 
         student.setDeleted(true);
+
         studentRepository.save(student);
     }
 }
